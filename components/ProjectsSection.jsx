@@ -2,70 +2,65 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { useMotionValue, useTransform } from "framer-motion";
+import { useMotionValue } from "framer-motion";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
-import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
   {
     num: "01",
-    category: "Machine Learning",
-    title: "Movie Recommender System",
+    category: "AI / Full Stack Healthcare",
+    title: "AI-Powered Medical Assistant",
     description:
-      "Built a content-based movie recommender with an interactive UI using Python and Streamlit. The model, using the TMDB 10k dataset, leverages cosine similarity from Scikit-Learn to find and suggest similar movies. The app dynamically fetches movie posters via the TMDB API to provide a visually engaging experience.",
+      "Developed a full-stack AI-powered medical assistant mobile application that enables real-time patient interaction through an intelligent chatbot. Built with FastAPI backend, React Native frontend, PostgreSQL database, JWT authentication, WebSocket live updates, doctor review system, and OpenAI API integration for context-aware medical guidance.",
     stack: [
-      { name: "Python" },
-      { name: "Streamlit" },
-      { name: "Sci-Kit Learn" },
-      { name: "Pandas" },
+      { name: "FastAPI" },
+      { name: "React Native" },
+      { name: "PostgreSQL" },
+      { name: "OpenAI API" },
+      { name: "WebSocket" },
     ],
     image: "/assets/work/thumb1.png",
     live: " ",
-    github:
-      "https://github.com/GauravSonawane18/Movie-Recommender-System-ML-project.git",
+    github: "https://github.com/GauravSonawane18/AI-Powered-Medical-Assistant.git",
   },
 
   {
     num: "02",
-    category: "Web Application Development",
-    title: "Online Voting System",
+    category: "Machine Learning",
+    title: "Movie Recommendation Engine",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum consectetur laborum esse fugit omnis. Voluptates, ipsa laborum.",
+      "Built a content-based Movie Recommendation Engine using Python and Streamlit. Used TMDB dataset with cosine similarity from Scikit-Learn to recommend similar movies based on genre, cast, keywords, language, and overview. Integrated TMDB API for dynamic poster fetching and improved user experience.",
     stack: [
-      { name: "Java" },
-      { name: "SpringBoot" },
-      { name: "Hibernate" },
-      { name: "MySQL" },
+      { name: "Python" },
+      { name: "Streamlit" },
+      { name: "Scikit-Learn" },
+      { name: "Pandas" },
+      { name: "TMDB API" },
     ],
     image: "/assets/work/thumb2.png",
     live: " ",
-    github: " ",
+    github:
+      "https://github.com/GauravSonawane18/Movie-Recommendation-Engine.git",
   },
 
   {
     num: "03",
-    category: "Android Development",
-    title: "Application System",
+    category: "Blockchain / Java Development",
+    title: "Blockchain Based Online Voting System",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum consectetur laborum esse fugit omnis. Voluptates, ipsa laborum.",
+      "Developed a secure online voting platform using blockchain principles to ensure transparency, immutability, and fraud prevention. Implemented voter authentication, vote encryption, result integrity, and decentralized vote storage using Java-based backend architecture.",
     stack: [
       { name: "Java" },
-      { name: "SpringBoot" },
-      { name: "Hibernate" },
+      { name: "Blockchain" },
+      { name: "Spring Boot" },
       { name: "MySQL" },
     ],
     image: "/assets/work/thumb3.png",
     live: " ",
-    github: " ",
+    github: "https://github.com/GauravSonawane18/Blockchain-based-Online-Voting-System.git",
   },
 ];
 
@@ -88,6 +83,7 @@ export default function ProjectsSection() {
   };
 
   const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") {
@@ -109,14 +105,11 @@ export default function ProjectsSection() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`
-              px-5 py-2 rounded-full text-lg font-medium transition-all
-              ${
-                activeIndex === index
-                  ? "bg-accent text-primary shadow-[0_0_25px_rgba(0,255,153,0.6)]"
-                  : "bg-white/5 text-white/60 hover:text-accent"
-              }
-            `}
+            className={`px-5 py-2 rounded-full text-lg font-medium transition-all ${
+              activeIndex === index
+                ? "bg-accent text-primary shadow-[0_0_25px_rgba(0,255,153,0.6)]"
+                : "bg-white/5 text-white/60 hover:text-accent"
+            }`}
           >
             {project.num}
           </button>
@@ -124,7 +117,6 @@ export default function ProjectsSection() {
       </div>
 
       <div className="xl:sticky xl:top-28 container mx-auto flex flex-col xl:flex-row gap-10 xl:gap-16 items-center">
-        {/* LEFT — PRODUCT INFO */}
         <div className="w-full xl:w-1/2">
           <AnimatePresence mode="wait">
             <motion.div
@@ -147,7 +139,6 @@ export default function ProjectsSection() {
                 {projects[activeIndex]?.description}
               </p>
 
-              {/* Tech stack */}
               <ul className="flex flex-wrap gap-3 text-accent">
                 {projects[activeIndex]?.stack.map((tech, i) => (
                   <li key={i} className="text-sm">
@@ -156,7 +147,6 @@ export default function ProjectsSection() {
                 ))}
               </ul>
 
-              {/* CTAs */}
               <div className="flex gap-6">
                 <Link
                   href={projects[activeIndex]?.github}
@@ -182,27 +172,24 @@ export default function ProjectsSection() {
           </AnimatePresence>
         </div>
 
-        {/* RIGHT — PRODUCT VISUAL */}
         <div className="w-full xl:w-1/2">
-          <AnimatePresence mode="wait">
-            <motion.div
-              onMouseMove={handleMouseMove}
-              onMouseLeave={resetTilt}
-              style={{
-                rotateX: tiltX,
-                rotateY: tiltY,
-                transformStyle: "preserve-3d",
-              }}
-              className="relative w-full h-[240px] sm:h-[300px] xl:h-[420px] rounded-xl xl:rounded-2xl overflow-hidden xl:shadow-[0_0_80px_rgba(0,255,153,0.15)]"
-            >
-              <Image
-                src={projects[activeIndex]?.image}
-                fill
-                className="object-cover"
-                alt=""
-              />
-            </motion.div>
-          </AnimatePresence>
+          <motion.div
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetTilt}
+            style={{
+              rotateX: tiltX,
+              rotateY: tiltY,
+              transformStyle: "preserve-3d",
+            }}
+            className="relative w-full h-[240px] sm:h-[300px] xl:h-[420px] rounded-xl xl:rounded-2xl overflow-hidden xl:shadow-[0_0_80px_rgba(0,255,153,0.15)]"
+          >
+            <Image
+              src={projects[activeIndex]?.image}
+              fill
+              className="object-cover"
+              alt=""
+            />
+          </motion.div>
         </div>
       </div>
     </section>
