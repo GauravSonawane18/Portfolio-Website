@@ -71,7 +71,7 @@ const projects = [
       { name: "Web3j" },
       { name: "Ethereum" },
     ],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/thumb03.png",
     live: " ",
     github: "https://github.com/GauravSonawane18/Blockchain-based-Online-Voting-System.git",
   },
