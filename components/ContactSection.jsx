@@ -32,12 +32,12 @@ const info = [
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "gauravsonawane1722.@gmail.com",
+    description: "gaurav.sonawane.08080@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Pune, Maharashtra, India, 411002",
+    description: "Pune, Maharashtra, India, 411045",
   },
 ];
 

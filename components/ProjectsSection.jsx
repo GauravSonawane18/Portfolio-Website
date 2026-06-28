@@ -18,54 +18,62 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Machine Learning",
-    title: "Movie Recommender System",
-    description:
-      "Built a content-based movie recommender with an interactive UI using Python and Streamlit. The model, using the TMDB 10k dataset, leverages cosine similarity from Scikit-Learn to find and suggest similar movies. The app dynamically fetches movie posters via the TMDB API to provide a visually engaging experience.",
+    category: "Machine Learning, Web Application Developement",
+    title: "CineScout - Movie Recommender Engine",
+    description: "Built high-performance AI-powered movie recommendation engine using Python, Streamlit, Scikit-learn, and TF-IDF Vectorization. The system delivers accurate content-based recommendations through dynamic cosine similarity on movie metadata while leveraging an optimized sparse-vector architecture for improved scalability and memory efficiency. Integrated TMDB APIs for live trending movies and metadata, and designed a modern OTT-inspired responsive user interface.",
     stack: [
       { name: "Python" },
+      { name: "Machine Learning" },
       { name: "Streamlit" },
+      { name: "TF-IDF" },
       { name: "Sci-Kit Learn" },
       { name: "Pandas" },
+      { name: "NLP" },
+      { name: "TMDB API" }
     ],
-    image: "/assets/work/thumb1.png",
-    live: " ",
-    github:
-      "https://github.com/GauravSonawane18/Movie-Recommender-System-ML-project.git",
+    image: "/assets/work/thumb01.png",
+    live: "https://cinescout.streamlit.app",
+    github: "https://github.com/GauravSonawane18/CineScout-Movie-Recommendation-Engine.git",
   },
 
   {
     num: "02",
-    category: "Web Application Development",
-    title: "Online Voting System",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum consectetur laborum esse fugit omnis. Voluptates, ipsa laborum.",
+    category: "Artificial Intelligence, Mobile Application Developement",
+    title: "AI-Powered Medical Assistant",
+    description: "Built an intelligent healthcare platform that leverages Generative AI to analyze patient symptoms, provide preliminary medical guidance, prioritize high-risk cases, and assist healthcare professionals with real-time decision support. Designed a responsive full-stack application featuring AI-powered conversations, patient management, medical history tracking, and automated symptom triage to improve clinical workflow and patient engagement.",
     stack: [
-      { name: "Java" },
-      { name: "SpringBoot" },
-      { name: "Hibernate" },
-      { name: "MySQL" },
+      { name: "Python" },
+      { name: "GenerativeAI" },
+      { name: "LLM" },
+      { name: "OpenAI" },
+      { name: "FastAPI" },
+      { name: "RESTful API" },
+      { name: "ReactNative" },
+      { name: "PostgreSQL" },
     ],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/thumb02.png",
     live: " ",
-    github: " ",
+    github: "https://github.com/GauravSonawane18/AI-Powered-Medical-Assistant.git",
   },
 
   {
     num: "03",
-    category: "Android Development",
-    title: "Application System",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum consectetur laborum esse fugit omnis. Voluptates, ipsa laborum.",
+    category: "Blockchain, Full-Stack Development, Cybersecurity",
+    title: "Blockchain-Based Online Voting System",
+    description: "Developed a secure, decentralized online voting platform using Ethereum, Solidity, Spring Boot, React, and PostgreSQL. The system ensures transparent and tamper-proof elections through smart contracts, MetaMask authentication, JWT-based security, OTP verification, and one-vote-per-user enforcement. Integrated AI-powered fraud detection and real-time election analytics to enhance voting integrity, security, and scalability.",
     stack: [
       { name: "Java" },
       { name: "SpringBoot" },
-      { name: "Hibernate" },
-      { name: "MySQL" },
+      { name: "Blockchain" },
+      { name: "React" },
+      { name: "PostgreSQL" },
+      { name: "JWT Authentication" },
+      { name: "Web3j" },
+      { name: "Ethereum" },
     ],
     image: "/assets/work/thumb3.png",
     live: " ",
-    github: " ",
+    github: "https://github.com/GauravSonawane18/Blockchain-based-Online-Voting-System.git",
   },
 ];
 
